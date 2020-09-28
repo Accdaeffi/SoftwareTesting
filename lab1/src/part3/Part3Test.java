@@ -31,6 +31,25 @@ public class Part3Test {
 
 		assertEquals(item, box.getContained());
 		assertEquals(item, hand.getContained());
+		assertEquals(Action.TAKING, hand.doing);
+		
+		hand.setContained(null);
+		
+		assertEquals(Action.IDLE, hand.doing);		
+	}
+	
+	@Test
+	public void testFish() {
+		Container vial = new Container("Флакон");
+		Fish goldfish = new Fish("Рыбка");
+		
+		vial.contained = goldfish;
+		
+		assertEquals(Action.IDLE, goldfish.doing);		
+		
+		goldfish.swim();
+		
+		assertEquals(Action.SWIMING, goldfish.doing);		
 	}
 	
 	@Test

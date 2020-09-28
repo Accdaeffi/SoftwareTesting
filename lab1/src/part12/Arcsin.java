@@ -1,4 +1,4 @@
-package lab1;
+package part12;
 
 public class Arcsin {
 
