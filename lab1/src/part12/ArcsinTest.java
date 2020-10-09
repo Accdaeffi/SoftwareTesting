@@ -65,9 +65,6 @@ public class ArcsinTest {
 			double as = Math.toDegrees(Math.asin(i));
 			double arcs = Math.toDegrees(Arcsin.arcsin(i));
 		
-			/*double as = Math.asin(i);
-			double arcs = Arcsin.arcsin(i);
-			*/
 			assertEquals("Wrong result:" 
 					+ "\nValue:" + i
 					+ "\nNormal:" + as
