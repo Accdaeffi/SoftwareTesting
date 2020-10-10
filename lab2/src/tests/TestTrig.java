@@ -79,5 +79,4 @@ class TestTrig {
             assertEquals(Trig.calcCot(i), (Double.NaN));
         }
     }
-
 }
