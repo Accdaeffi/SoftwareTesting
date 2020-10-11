@@ -2,7 +2,7 @@ package ln;
 
 public class Ln {
 
-	public static double ln(double x) {
+	public double ln(double x) {
 
 		double ln10 = 2.302585092994045684017991454684364207601101488628772976033;
 		double eps = 0.0000001;

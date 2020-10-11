@@ -3,7 +3,10 @@ package log;
 import ln.Ln;
 
 public class Log {
-	public static double log(double c, double b) {
-		return Ln.ln(b)/Ln.ln(c);
+	
+	public Ln ln = new Ln();
+	
+	public double log(double c, double b) {
+		return ln.ln(b)/ln.ln(c);
 	}
 }

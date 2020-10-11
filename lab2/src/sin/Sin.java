@@ -2,7 +2,7 @@ package sin;
 
 public class Sin {
 	
-	private static double calibrateX(double x) {
+	private double calibrateX(double x) {
         double del = Math.PI * 2;
         if (x < 0)
             del *= -1;
@@ -12,7 +12,7 @@ public class Sin {
         return x;
     }
 
-    public static double calcSin(double x) {
+    public double calcSin(double x) {
         double eps = 1e-10;
     	
         x = calibrateX(x);

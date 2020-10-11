@@ -11,9 +11,12 @@ class TestSin {
 
 	@Test
 	void testSin() {
+		Sin s = new Sin();
+		
+		
 		for (double i=-100; i<=100; i=i+0.01) {
 			double as = Math.sin(i);
-			double arcs = Sin.calcSin(i);
+			double arcs = s.calcSin(i);
 		
 			assertEquals("Wrong result:" 
 					+ "\nValue:" + i
