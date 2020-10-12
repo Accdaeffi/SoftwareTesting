@@ -31,9 +31,11 @@ public class Main {
 		
 		XYSeries series = new XYSeries("function");
 
-		for(double i = -Math.PI*6-0.000001; i < -Math.PI/6-0.000001; i+=Math.PI/48){
+		//for(double i = -Math.PI*6-0.000001; i < -Math.PI/6-0.000001; i+=Math.PI/48){
 		//for(double i = -6; i < -2; i+=0.0001){
 	    //for(double i = -6; i < -4; i+=0.0001){
+		//for (double i = 0.1; i<0.9; i+=0.0001) {
+		for (double i = 2; i<10; i+=0.0001) {
 	      series.add(i, main.finalFunction(i));
 	    }
 
