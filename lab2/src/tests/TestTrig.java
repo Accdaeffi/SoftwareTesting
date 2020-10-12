@@ -17,6 +17,81 @@ class TestTrig {
 	static Trig trig = new Trig();
 	
     @Test
+    public void testModuleCot() {
+    	
+    	Trig trig = new Trig();
+    	
+    	
+    	SinMock sinPer = new SinMock();
+    	CosMock cosPer = new CosMock();
+
+    	Trig trigPer = new Trig();
+    	trigPer.sin = sinPer;
+    	trigPer.cos = cosPer;
+    	
+		for (double i=-100; i<=100; i=i+0.01) {
+			double as = trigPer.calcCot(i);
+			double arcs = trig.calcCot(i);
+		
+			assertEquals("Wrong result:" 
+					+ "\nValue:" + i
+					+ "\nNormal:" + as
+					+ "\nCalculated:" + arcs, as, arcs, 0.01);
+			
+		}
+    }
+    
+    @Test
+    public void testModuleCsc() {
+    	
+    	Trig trig = new Trig();
+    	
+    	
+    	SinMock sinPer = new SinMock();
+    	CosMock cosPer = new CosMock();
+
+    	Trig trigPer = new Trig();
+    	trigPer.sin = sinPer;
+    	trigPer.cos = cosPer;
+    
+		for (double i=-100; i<=100; i=i+0.01) {
+			double as = trigPer.calcCsc(i);
+			double arcs = trig.calcCsc(i);
+		
+			assertEquals("Wrong result:" 
+					+ "\nValue:" + i
+					+ "\nNormal:" + as
+					+ "\nCalculated:" + arcs, as, arcs, 0.01);
+			
+		}
+    }
+    
+    @Test
+    public void testModuleSec() {
+    	
+    	Trig trig = new Trig();
+    	
+    	
+    	SinMock sinPer = new SinMock();
+    	CosMock cosPer = new CosMock();
+
+    	Trig trigPer = new Trig();
+    	trigPer.sin = sinPer;
+    	trigPer.cos = cosPer;
+		
+		for (double i=-100; i<=100; i=i+0.01) {
+			double as = trigPer.calcSec(i);
+			double arcs = trig.calcSec(i);
+		
+			assertEquals("Wrong result:" 
+					+ "\nValue:" + i
+					+ "\nNormal:" + as
+					+ "\nCalculated:" + arcs, as, arcs, 0.01);
+			
+		}
+    }
+	
+    @Test
     public void testCsc1() {
         for (double i = eps; i < 4*Math.PI/2 ; i += Math.PI/6) {
             assertEquals(trig.calcCsc(i),1/Math.sin(i), eps);
@@ -77,54 +152,5 @@ class TestTrig {
         for (double i = -5*Math.PI; i <= 5*Math.PI ; i += Math.PI) {
             assertEquals(trig.calcCot(i), (Double.NaN), 1);
         }
-    }
-    
-    @Test
-    public void testIntegro() {
-    	
-    	Trig trig = new Trig();
-    	
-    	
-    	SinMock sinPer = new SinMock();
-    	CosMock cosPer = new CosMock();
-
-    	Trig trigPer = new Trig();
-    	trigPer.sin = sinPer;
-    	trigPer.cos = cosPer;
-    	
-		for (double i=-100; i<=100; i=i+0.01) {
-			double as = trigPer.calcCot(i);
-			double arcs = trig.calcCot(i);
-		
-			assertEquals("Wrong result:" 
-					+ "\nValue:" + i
-					+ "\nNormal:" + as
-					+ "\nCalculated:" + arcs, as, arcs, 0.01);
-			
-		}
-		
-		for (double i=-100; i<=100; i=i+0.01) {
-			double as = trigPer.calcCsc(i);
-			double arcs = trig.calcCsc(i);
-		
-			assertEquals("Wrong result:" 
-					+ "\nValue:" + i
-					+ "\nNormal:" + as
-					+ "\nCalculated:" + arcs, as, arcs, 0.01);
-			
-		}
-		
-		for (double i=-100; i<=100; i=i+0.01) {
-			double as = trigPer.calcSec(i);
-			double arcs = trig.calcSec(i);
-		
-			assertEquals("Wrong result:" 
-					+ "\nValue:" + i
-					+ "\nNormal:" + as
-					+ "\nCalculated:" + arcs, as, arcs, 0.01);
-			
-		}
-    }
-    
-    
+    }  
 }

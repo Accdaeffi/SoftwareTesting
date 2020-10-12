@@ -7,8 +7,14 @@ public class Ln {
 		double ln10 = 2.302585092994045684017991454684364207601101488628772976033;
 		double eps = 0.0000001;
 		
-		if (x <= 0) {
+		
+		
+		if (x < 0.0) {
     		return Double.NaN;
+		}
+		
+		if (x == 0.0) {
+    		return Double.NEGATIVE_INFINITY;
 		}
 
 		double result = 0.0, tmp = 1.0;

@@ -19,7 +19,8 @@ class TestLn {
 	@Test
 	void testLn() {
 		Ln l = new Ln();
-		for (Double i = 0.01; i < 10; i += 0.1) {
+		
+		for (double i = 0.0; i < 10; i += 0.1) {
 			assertEquals(l.ln(i), Math.log(i), 0.0001);
 		}
 	}

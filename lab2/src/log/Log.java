@@ -7,6 +7,13 @@ public class Log {
 	public Ln ln = new Ln();
 	
 	public double log(double c, double b) {
-		return ln.ln(b)/ln.ln(c);
+		
+		double logB = ln.ln(b);
+		double logC = ln.ln(c);
+		
+		if ((logB == Double.NaN) || (logC == Double.NaN) || (Double.isInfinite(logB)) || (Double.isInfinite(logC)))
+			return Double.NaN;
+		
+		return logB/logC;
 	}
 }

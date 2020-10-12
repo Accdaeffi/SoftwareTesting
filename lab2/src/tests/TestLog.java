@@ -11,16 +11,28 @@ import static org.mockito.ArgumentMatchers.*;
 import org.mockito.InOrder;
 
 import ln.Ln;
+import ln.LnMock;
 import log.Log;
 
 class TestLog {
 
 	static Log l;
 	
-	/*@BeforeClass
-	public static void init() {
+	@Test
+	void testModule() {
 		l = new Log();
-	}*/
+		
+		LnMock ln = new LnMock(); 
+		
+		/*Ln ln = mock(Ln.class);
+		when(ln.ln(20)).thenReturn((double) 2.9957322735539909934352235);
+		when(ln.ln(3)).thenReturn((double) 1.0986122886681096913952452);*/
+		
+		l.ln = ln;
+		
+		assertEquals(l.log(3, 20), 2.72683302786084, 0.00001);
+		
+	}
 	
 	@Test
 	void testBadBase() {
@@ -47,18 +59,4 @@ class TestLog {
 		assertEquals(l.log(3, 432), 5.52371901, 0.00001);
 		assertEquals(l.log(0.3, 432), -5.04033444, 0.00001);
 	}
-	
-	@Test
-	void testIntegro() {
-		l = new Log();
-		Ln ln = mock(Ln.class);
-		when(ln.ln(20)).thenReturn((double) 2.9957322735539909934352235);
-		when(ln.ln(3)).thenReturn((double) 1.0986122886681096913952452);
-		
-		l.ln = ln;
-		
-		assertEquals(l.log(3, 20), 2.72683302786084, 0.00001);
-		
-	}
-	
 }

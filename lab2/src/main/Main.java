@@ -19,9 +19,10 @@ import trig.Trig;
 public class Main {
 
 	public static void main(String[] args) {
-		/*XYSeries series = new XYSeries("function");
+		XYSeries series = new XYSeries("function");
 
-	    for(double i = -7; i < -2; i+=0.0001){
+		for(double i = -6; i < -2; i+=0.0001){
+	    //for(double i = -6; i < -4; i+=0.0001){
 	      series.add(i, finalFunction(i));
 	    }
 
@@ -37,15 +38,15 @@ public class Main {
 	    frame.getContentPane()
 	        .add(new ChartPanel(chart));
 	    frame.setSize(400,300);
-	    frame.show();*/
+	    frame.show();
 		
-		Scanner sc = new Scanner(System.in);
+		/*Scanner sc = new Scanner(System.in);
 		
 		double x = sc.nextDouble();
 		
 		System.out.println(finalFunction(x));
 		
-		sc.close();
+		sc.close();*/
 	}
 	
 	public static double finalFunction(double x) {
