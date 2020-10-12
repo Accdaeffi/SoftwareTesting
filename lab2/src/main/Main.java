@@ -18,12 +18,23 @@ import trig.Trig;
 
 public class Main {
 
+	public static Cos cos = new Cos();
+	public static Sin sin = new Sin();
+	public static Trig trig = new Trig();
+	
+	public static Ln ln = new Ln();
+	public static Log log = new Log();
+	
 	public static void main(String[] args) {
+		
+		Main main = new Main();
+		
 		XYSeries series = new XYSeries("function");
 
-		for(double i = -6; i < -2; i+=0.0001){
+		for(double i = -Math.PI*6-0.000001; i < -Math.PI/6-0.000001; i+=Math.PI/48){
+		//for(double i = -6; i < -2; i+=0.0001){
 	    //for(double i = -6; i < -4; i+=0.0001){
-	      series.add(i, finalFunction(i));
+	      series.add(i, main.finalFunction(i));
 	    }
 
 	    XYDataset xyDataset = new XYSeriesCollection(series);
@@ -34,7 +45,7 @@ public class Main {
 	                           true, true, true);
 	    JFrame frame = 
 	        new JFrame("MinimalStaticChart");
-	    // Помещаем график на фрейм
+	    
 	    frame.getContentPane()
 	        .add(new ChartPanel(chart));
 	    frame.setSize(400,300);
@@ -44,23 +55,16 @@ public class Main {
 		
 		double x = sc.nextDouble();
 		
-		System.out.println(finalFunction(x));
+		System.out.println(main.finalFunction(x));
 		
 		sc.close();*/
 	}
 	
-	public static double finalFunction(double x) {
+	public double finalFunction(double x) {
 		if (x<=0) {
-			
-			Cos cos = new Cos();
-			Sin sin = new Sin();
-			Trig trig = new Trig();
 			
 			return ((  (Math.pow(Math.pow(sin.calcSin(x) - trig.calcCsc(x), 2), 2)) + (trig.calcCot(x) - cos.calcCos(x))) + (sin.calcSin(x) - (Math.pow((trig.calcCsc(x) * trig.calcSec(x)) + cos.calcCos(x),2))));
 		} else {
-			
-			Ln ln = new Ln();
-			Log log = new Log();
 			
 			return ( Math.pow( (  ((Math.pow(ln.ln(x),3))-(log.log(5,x)/log.log(3,x))) * ((log.log(5,x) + log.log(2,x))/(log.log(5,x)))) / (log.log(10,x)),3));
 		}

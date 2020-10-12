@@ -16,9 +16,10 @@ public class Trig {
 	}
 	
 	public double calcSec(double x) {
-		if (((x-Math.PI/2)%Math.PI)!=0)
-		return 1/cos.calcCos(x); else {
-			return Double.NaN;
+		if (((x%(Math.PI/2))==0)&&((x%Math.PI)!=0))
+
+			return Double.NaN; else {
+			return 1/cos.calcCos(x);
 		}
 	}
 	

@@ -24,12 +24,12 @@ class TestLog {
 		
 		LnMock ln = new LnMock(); 
 		
-		/*Ln ln = mock(Ln.class);
-		when(ln.ln(20)).thenReturn((double) 2.9957322735539909934352235);
-		when(ln.ln(3)).thenReturn((double) 1.0986122886681096913952452);*/
-		
 		l.ln = ln;
 		
+
+		assertEquals(l.log(10, 15), Math.log10(15), 0.00001);
+		assertEquals(l.log(3, 432), 5.52371901, 0.00001);
+		assertEquals(l.log(0.3, 432), -5.04033444, 0.00001);
 		assertEquals(l.log(3, 20), 2.72683302786084, 0.00001);
 		
 	}
